@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="tet">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard Admin - Tesi-Fuk</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container-wide">
+        <h2>📊 Dashboard Agendamentu</h2>
+        <a href="/admin/logout" class="btn-logout">Sai (Logout)</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>Naran</th>
+                    <th>Telemóvel</th>
+                    <th>Servisu</th>
+                    <th>Data & Oras</th>
+                    <th>Status</th>
+                    <th>Aksaun</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in lista %}
+                <tr>
+                    <td>{{ item[1] }}</td>
+                    <td>{{ item[2] }}</td>
+                    <td>{{ item[3] }}</td>
+                    <td>{{ item[4] }} - {{ item[5] }}</td>
+                    <td><span class="badge {{ item[6]|lower }}">{{ item[6] }}</span></td>
+                    <td>
+                        <a href="/admin/status/{{ item[0] }}/Konfirmadu">Konfirma</a> | 
+                        <a href="/admin/status/{{ item[0] }}/Kansela">Kansela</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
