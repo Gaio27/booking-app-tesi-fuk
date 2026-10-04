@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="tet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking App Tesi-Fuk</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+    <meta name="theme-color" content="#2c3e50">
+</head>
+<body>
+    <div class="container">
+        <h1>💈 Booking Tesi-Fuk</h1>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <div class="flash">{{ messages[0] }}</div>
+          {% endif %}
+        {% endwith %}
+        <form action="/agendar" method="POST">
+            <label>Naran Kompletu:</label>
+            <input type="text" name="naran" required>
+            
+            <label>Sellular / WhatsApp:</label>
+            <input type="text" name="telemovel" required>
+            
+            <label>Hili Servisu:</label>
+            <select name="servisu">
+                <option value="Tesi Fuk Ba'an">Tesi Fuk Ba'an</option>
+                <option value="Tesi Fuk + Kompletu">Tesi Fuk + Kompletu</option>
+                <option value="KOR / Peinte">KOR / Peinte</option>
+            </select>
+            
+            <label>Data:</label>
+            <input type="date" name="data" required>
+            
+            <label>Oras:</label>
+            <input type="time" name="oras" required>
+            
+            <button type="submit">Kria Agendamentu</button>
+        </form>
+    </div>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
