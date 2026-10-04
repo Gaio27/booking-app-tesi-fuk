@@ -1,0 +1,15 @@
+{
+  "name": "Booking App Tesi-Fuk",
+  "short_name": "TesiFuk",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2c3e50",
+  "icons": [
+    {
+      "src": "/static/css/style.css",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
